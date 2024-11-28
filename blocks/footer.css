@@ -1,0 +1,15 @@
+
+
+
+.footer {
+    margin-top: 20px; /* Example for top margin */
+    padding: 60px 0; /* Horizontal padding for small screens */
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 0 50px; /* Adjust padding for larger screens */
+    }
+}
