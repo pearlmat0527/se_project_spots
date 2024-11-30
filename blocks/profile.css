@@ -8,7 +8,8 @@
 .profile__avatar{
     margin-right:20px;
     height: 190px;
-    margin-right: 20px;
+    border-radius: 10px;
+
 }
 .profile__column{
     display: flex;
@@ -34,6 +35,14 @@
     margin:0;
     text-overflow: ellipsis;
     overflow: hidden;
+    color:#212121B2;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -41,9 +50,10 @@
 }
 .profile__add-btn{
     margin-left:auto;
-    background-color: #000; 
-    color: white;
-    width:100%;
+    background-color: #212121;
+ 
+    color: #FCF5E5;
+
     width: 149px;
     height: 52px;
     align-self: flex-end;
@@ -51,8 +61,17 @@
 font-size: 16px;
 font-weight: 500;
 line-height: 16px;
-border-radius: 5px;
 
+align-items: center;
+display: flex;
+align-self: center;
+justify-content: center;
+gap:8px;
+
+padding: 18px 32px 18px 32px;
+
+border-radius: 8px ;
+opacity: 0px;
 
 
 
@@ -69,8 +88,9 @@ border-radius: 5px;
     border: none; /* Adds a border around the button */
     border-radius: 5px; /* Adds some rounded corners */
     text-align: start; /* Centers the text */
-    display: inline-block; /* Ensures the button size fits its content */
+    display: flex; /* Ensures the button size fits its content */
     gap: 8px;
+    opacity: 10px;
 
 }
 @media screen and (max-width:627px) {
@@ -102,7 +122,7 @@ border-radius: 5px;
     .profile__add-btn{
         margin: 0;
         width: 100%;
-        border-radius: 10px;
+        
 
     }
 }

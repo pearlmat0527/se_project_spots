@@ -19,5 +19,6 @@ border-bottom:1px rgba(33,33,33,0.4) solid;
 @media screen and (max-width:627px) {
     .cards__list{
         grid-template-columns: repeat(auto-fit,200px);
+        gap:20px 40px;
     }
 }
