@@ -54,7 +54,7 @@ text-decoration-skip-ink: none;
  
     color: #FCF5E5;
 
-    width: 149px;
+    /*width: 149px;*/
     height: 52px;
     align-self: flex-end;
     font-family: Poppins;
@@ -64,7 +64,7 @@ line-height: 16px;
 
 align-items: center;
 display: flex;
-align-self: center;
+
 justify-content: center;
 gap:8px;
 
