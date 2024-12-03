@@ -47,6 +47,7 @@ width: 23px;
         min-height: 288px;
         border-radius: 8px;
         min-width: 288px;
+        padding-bottom: 12px;
       
     }
     .card__title {
@@ -58,6 +59,16 @@ width: 23px;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0 0 12px;
+    min-width: 95px;
+    width: 99%;
+min-height: 16px;
+
+gap: 0px;
+opacity: 0px;
+ text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+
     
     
     }
