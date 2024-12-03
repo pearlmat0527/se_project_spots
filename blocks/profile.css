@@ -105,6 +105,7 @@ opacity: 0px;
         font-size: 20px;
         margin: 0 0 6px;
         max-width: 288px;
+
     }
    
     .profile__column{
@@ -113,6 +114,8 @@ opacity: 0px;
     .profile__description{
         margin: 0 0 32px;
         max-width: 288px;
+        text-align: center;
+        
     }
     .profile__avatar{
         height: 80px;
@@ -122,7 +125,25 @@ opacity: 0px;
     .profile__add-btn{
         margin: 0;
         width: 100%;
+        max-width: 288px;
+max-height: 52px;
+padding: 18px 32px 18px 32px;
+gap: 8px;
+border-radius: 8px ;
+opacity: 0px;
+background-color: #212121;
+color: #FCF5E5;
+font-family: Poppins;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+
         
 
-    }
+    
+}
 }
