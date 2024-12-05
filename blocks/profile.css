@@ -1,15 +1,16 @@
 .profile {
   display: flex;
-  /*max-width: 288px;*/
   margin: 0 auto;
   padding: 34px 0 20px;
-  border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
+
 .profile__avatar {
   margin-right: 20px;
   height: 190px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
+
 .profile__column {
   display: flex;
   flex-direction: column;
@@ -37,20 +38,15 @@
   font-weight: 500;
   line-height: 16px;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
 .profile__add-btn {
   margin-left: auto;
   background-color: #212121;
-
   color: #fcf5e5;
-
-  /*width: 149px;*/
   height: 52px;
   align-self: flex-end;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -61,37 +57,32 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 18px 32px 18px 32px;
+  padding: 18px 32px;
   border-radius: 8px;
 }
 
 .profile__add-btn:hover {
   background-color: rgba(33, 33, 33, 0.8);
-  /* Slightly lighter gray */
-  opacity: 1; /* Ensure it becomes visible */
+  opacity: 1;
   cursor: pointer;
 }
 
 .profile__edit-btn {
   margin-top: auto;
-  width: auto; /* Allows the button to adjust width according to its content */
-  padding: 10px 20px; /* Adjust the padding to make the button smaller or bigger */
-  background-color: transparent; /* Sets the background color */
-  color: black; /* Sets the font color */
-  border: none; /* Adds a border around the button */
-  border-radius: 5px; /* Adds some rounded corners */
-  text-align: start; /* Centers the text */
-  display: flex; /* Ensures the button size fits its content */
+  background-color: transparent;
+  color: rgba(33, 33, 33, 1);
+  border: none;
+  text-align: start;
+  display: flex;
   gap: 8px;
-  opacity: 70%;
-
-
+  opacity: 0.7;
 }
+
 .profile__edit-btn:hover {
-  /* Slightly lighter gray */
-  opacity: 100%; /* Ensure it becomes visible */
+  opacity: 1;
   cursor: pointer;
 }
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
@@ -99,6 +90,7 @@
     max-width: 288px;
     text-align: center;
   }
+
   .profile__name {
     font-size: 20px;
     margin: 0 0 6px;
@@ -108,22 +100,24 @@
   .profile__column {
     margin: 0 0 20px;
   }
+
   .profile__description {
     margin: 0 0 32px;
     max-width: 288px;
     text-align: center;
   }
+
   .profile__avatar {
     height: 80px;
     width: 80px;
     margin: 0 0 12px;
   }
+
   .profile__add-btn {
     margin: 0;
     width: 100%;
     max-width: 288px;
-    max-height: 52px;
-    padding: 18px 32px 18px 32px;
+    padding: 18px 32px;
     gap: 8px;
     border-radius: 8px;
     background-color: #212121;
@@ -132,8 +126,5 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
   }
 }

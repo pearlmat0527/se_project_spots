@@ -4,24 +4,22 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
   background-size: cover;
 }
+
 .page__section {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
 }
+
 @media screen and (max-width: 627px) {
   .page__section {
-    top: 360px;
-    left: 16px;
-    padding: 0px 0px 20px 0px;
-    gap: 20px;
-    border: 0px 0px 1px 0px;
-    opacity: 0px;
+    top: 1145px; /* Retaining the last specified 'top' value */
+    left: 16px; /* Retaining a meaningful 'left' value */
+    padding: 0 0 20px;
+    gap: 0; /* Retaining the last specified 'gap' value */
+    border: 0; /* Cleaned border shorthand */
+    opacity: 0; /* Retaining the last specified 'opacity' value */
     max-width: 320px;
     max-height: 2524px;
-    top: 1145px;
-    left: -778px;
-    gap: 0px;
-    opacity: 0px;
   }
 }
