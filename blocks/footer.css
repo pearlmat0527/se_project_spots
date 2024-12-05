@@ -1,20 +1,15 @@
-
-
-
 .footer {
-    
-    padding: 60px 0; /* Horizontal padding for small screens */
-    display: flex;
-    justify-content: center;
+  padding: 60px 0; /* Horizontal padding for small screens */
+  display: flex;
+  justify-content: center;
 }
 
-.footer__copyright{
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    
+.footer__copyright {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }

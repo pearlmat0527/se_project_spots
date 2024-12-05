@@ -1,149 +1,139 @@
-.profile{
-    display: flex;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding:34px 0 20px;
-    border-bottom:1px rgb(33,33,33,0.4) solid;
+.profile {
+  display: flex;
+  /*max-width: 288px;*/
+  margin: 0 auto;
+  padding: 34px 0 20px;
+  border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
 }
-.profile__avatar{
-    margin-right:20px;
-    height: 190px;
-    border-radius: 10px;
+.profile__avatar {
+  margin-right: 20px;
+  height: 190px;
+  border-radius: 10px;
+}
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #212121b2;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.profile__add-btn {
+  margin-left: auto;
+  background-color: #212121;
+
+  color: #fcf5e5;
+
+  /*width: 149px;*/
+  height: 52px;
+  align-self: flex-end;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 32px 18px 32px;
+  border-radius: 8px;
+}
+
+.profile__add-btn:hover {
+  background-color: rgba(33, 33, 33, 0.8);
+  /* Slightly lighter gray */
+  opacity: 1; /* Ensure it becomes visible */
+  cursor: pointer;
+}
+
+.profile__edit-btn {
+  margin-top: auto;
+  width: auto; /* Allows the button to adjust width according to its content */
+  padding: 10px 20px; /* Adjust the padding to make the button smaller or bigger */
+  background-color: transparent; /* Sets the background color */
+  color: black; /* Sets the font color */
+  border: none; /* Adds a border around the button */
+  border-radius: 5px; /* Adds some rounded corners */
+  text-align: start; /* Centers the text */
+  display: flex; /* Ensures the button size fits its content */
+  gap: 8px;
+  opacity: 70%;
+
 
 }
-.profile__column{
-    display: flex;
+.profile__edit-btn:hover {
+  /* Slightly lighter gray */
+  opacity: 100%; /* Ensure it becomes visible */
+  cursor: pointer;
+}
+@media screen and (max-width: 627px) {
+  .profile {
     flex-direction: column;
-}
+    align-items: center;
+    max-width: 288px;
+    text-align: center;
+  }
+  .profile__name {
+    font-size: 20px;
+    margin: 0 0 6px;
+    max-width: 288px;
+  }
 
-.profile__name{
-    margin:0 0 12px;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 1;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    max-width: 420px;
-  
-
-}
-
-.profile__description{
-    margin:0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color:#212121B2;
-font-size: 16px;
-font-weight: 500;
-line-height: 16px;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  
-}
-.profile__add-btn{
-    margin-left:auto;
-    background-color: #212121;
- 
-    color: #FCF5E5;
-
-    /*width: 149px;*/
-    height: 52px;
-    align-self: flex-end;
-    font-family: Poppins,Arial, Helvetica, sans-serif;
-font-size: 16px;
-font-weight: 500;
-line-height: 16px;
-
-align-items: center;
-display: flex;
-
-justify-content: center;
-gap:8px;
-
-padding: 18px 32px 18px 32px;
-
-border-radius: 8px ;
-opacity: 0px;
-
-
-
-
-
-}
-
-.profile__edit-btn{
-    margin-top:auto;
-    width: auto; /* Allows the button to adjust width according to its content */
-    padding: 10px 20px; /* Adjust the padding to make the button smaller or bigger */
-    background-color: transparent; /* Sets the background color */
-    color: black; /* Sets the font color */
-    border: none; /* Adds a border around the button */
-    border-radius: 5px; /* Adds some rounded corners */
-    text-align: start; /* Centers the text */
-    display: flex; /* Ensures the button size fits its content */
+  .profile__column {
+    margin: 0 0 20px;
+  }
+  .profile__description {
+    margin: 0 0 32px;
+    max-width: 288px;
+    text-align: center;
+  }
+  .profile__avatar {
+    height: 80px;
+    width: 80px;
+    margin: 0 0 12px;
+  }
+  .profile__add-btn {
+    margin: 0;
+    width: 100%;
+    max-width: 288px;
+    max-height: 52px;
+    padding: 18px 32px 18px 32px;
     gap: 8px;
-    opacity: 10px;
-
-}
-@media screen and (max-width:627px) {
-    .profile{
-        flex-direction: column;
-        max-width: 200px;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-    .profile__name{
-        font-size: 20px;
-        margin: 0 0 6px;
-        max-width: 288px;
-
-    }
-   
-    .profile__column{
-        margin: 0 0 20px;
-    }
-    .profile__description{
-        margin: 0 0 32px;
-        max-width: 288px;
-        text-align: center;
-        
-    }
-    .profile__avatar{
-        height: 80px;
-        width:80px;
-        margin: 0 0 12px;
-    }
-    .profile__add-btn{
-        margin: 0;
-        width: 100%;
-        max-width: 288px;
-max-height: 52px;
-padding: 18px 32px 18px 32px;
-gap: 8px;
-border-radius: 8px ;
-opacity: 0px;
-background-color: #212121;
-color: #FCF5E5;
-font-family:Poppins,Arial, Helvetica, sans-serif;
-font-size: 16px;
-font-weight: 500;
-line-height: 16px;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-
-
-        
-
-    
-}
+    border-radius: 8px;
+    background-color: #212121;
+    color: #fcf5e5;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
 }

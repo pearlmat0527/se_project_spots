@@ -1,93 +1,78 @@
-
-.card__image{
-    height: 413px;
- 
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
+.card__image {
+  height: 413px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
 }
 
-.card__content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 500;
-
+.card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
 }
 
 .card__title {
+  font-size: 20px;
+  line-height: 24px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 12px 0 0 0;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+}
+.card__like-button {
+  background-image: url(../images/Union.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  opacity: 40%;
+  background-color: transparent;
+  margin: 12px 0 0 0;
+}
+.card__like-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+@media screen and (max-width: 627px) {
+  .card__image {
+    max-height: 288px;
+    border-radius: 8px;
+    max-width: 310px;
+    /*padding-bottom: 12px;*/
+  }
+
+  .card__title {
     font-size: 20px;
-    line-height: 24px;
-    font-family: Poppins,Arial, Helvetica, sans-serif;
-font-weight: 500;
-line-height: 24px;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-margin: 0 0 12px;
-text-overflow: ellipsis;
-white-space: nowrap;
-overflow: hidden;
-
-
-}
-.card__like-button{
-    background-image: url(../images/Union.svg);
-width: 23px;
-    height: 20px;
-    border: none;
-    opacity: 40%;
-    background-color: transparent;
-
-}
-
-@media screen and (max-width:627px) {
-    .card__image{
-        min-height: 288px;
-        border-radius: 8px;
-        min-width: 288px;
-        padding-bottom: 12px;
-      
-    }
-    .card__title {
-        font-size: 20px;
-        line-height: 20px;
-        font-family: Poppins,Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 20px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     font-weight: 500;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    margin: 0 0 12px;
+    margin: 0;
     min-width: 95px;
     width: 99%;
-min-height: 16px;
 
-gap: 0px;
-opacity: 0px;
- text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
+    gap: 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 12px;
+    padding-bottom: 22px;
+  }
 
-    
-    
-    }
-
-.card__like-button{
-    background-image: url(../images/Like.svg);
-}
-
-.card__title {
-
-gap: 0px;
-opacity: 0px;
-font-family: Poppins;
-font-size: 16px;
-font-weight: 500;
-line-height: 16px;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-
-}
+  .card__like-button {
+    opacity: 40%;
+    padding-top: 12px;
+    padding-bottom: 22px;
+    background-repeat: no-repeat;
+  }
 }
