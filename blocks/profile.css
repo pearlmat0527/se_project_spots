@@ -17,6 +17,8 @@
 }
 
 .profile__name {
+  color: rgba(33, 33, 33, 1);
+
   margin: 0 0 12px;
   font-weight: 500;
   font-size: 32px;
@@ -62,8 +64,7 @@
 }
 
 .profile__add-btn:hover {
-  background-color: rgba(33, 33, 33, 0.8);
-  opacity: 1;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -85,10 +86,7 @@
 
 @media screen and (max-width: 627px) {
   .profile {
-    flex-direction: column;
-    align-items: center;
     max-width: 288px;
-    text-align: center;
   }
 
   .profile__name {
@@ -128,3 +126,4 @@
     line-height: 16px;
   }
 }
+  

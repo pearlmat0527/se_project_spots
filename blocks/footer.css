@@ -12,4 +12,5 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  color: rgba(33, 33, 33, 0.7);
 }

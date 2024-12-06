@@ -13,13 +13,13 @@
 
 @media screen and (max-width: 627px) {
   .page__section {
-    top: 1145px; /* Retaining the last specified 'top' value */
-    left: 16px; /* Retaining a meaningful 'left' value */
+    /*top: 1145px; /* Retaining the last specified 'top' value */
+    /*left: 16px; /* Retaining a meaningful 'left' value */
     padding: 0 0 20px;
     gap: 0; /* Retaining the last specified 'gap' value */
     border: 0; /* Cleaned border shorthand */
-    opacity: 0; /* Retaining the last specified 'opacity' value */
-    max-width: 320px;
-    max-height: 2524px;
+    /*opacity: 0; /* Retaining the last specified 'opacity' value */
+    /*max-width: 320px;
+    max-height: 2524px;*/
   }
 }
