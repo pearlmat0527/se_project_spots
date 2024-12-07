@@ -2,6 +2,8 @@
   display: flex;
   margin: 0 auto;
   padding: 34px 0 20px;
+  width: 100%;
+  box-sizing: border-box;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 
@@ -75,8 +77,15 @@
   border: none;
   text-align: start;
   display: flex;
-  gap: 8px;
+
   opacity: 0.7;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .profile__edit-btn:hover {
@@ -89,7 +98,6 @@
     flex-direction: column;
     align-items: center;
     max-width: 288px;
-    text-align: center;
   }
 
   .profile__name {
@@ -120,12 +128,11 @@
     max-width: 288px;
     padding: 18px 32px;
     gap: 8px;
-    border-radius: 8px;
-    background-color: #212121;
-    color: #fcf5e5;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 16px;
+  }
+
+  .profile__edit-btn {
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    gap: 8px;
   }
 }
