@@ -12,14 +12,16 @@
   grid-template-columns: repeat(auto-fit, 413px);
   justify-content: center;
   gap: 40px 20px;
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 627px) {
   .cards {
     padding-bottom: 20px;
+
+    max-width: 100%; /* Matches the container width */
+    margin: 0 auto;
+
+    padding-bottom: 16px;
   }
 
   .cards__list {

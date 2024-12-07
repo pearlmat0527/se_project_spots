@@ -15,3 +15,11 @@
   color: rgba(33, 33, 33, 0.7);
   margin: 0 0 auto;
 }
+
+@media (max-width: px) {
+  .footer {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
