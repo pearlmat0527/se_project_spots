@@ -17,8 +17,7 @@
 @media screen and (max-width: 627px) {
   .cards {
     padding-bottom: 20px;
-
-    max-width: 100%; /* Matches the container width */
+    max-width: calc(100% - 32px); /* Matches the container width */
     margin: 0 auto;
 
     padding-bottom: 16px;
