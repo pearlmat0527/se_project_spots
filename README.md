@@ -2,16 +2,20 @@
 
     An image sharing site used for commercial purposes.
 
-## Project Description 
+## Project Description
 
     An image sharing site used for commercial purposes.
+
 ## Tech Stack
+
 - HTML
 - CSS
 - Responsive design
 - github
 
-## Deployment 
+## Deployment
+
 This webpage is deployed to Github
 
 - link : https://pearlmat0527.github.io/se_project_spots/
+- video link : https://www.youtube.com/watch?v=m4dUT3euHSM
