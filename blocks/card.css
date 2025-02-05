@@ -41,7 +41,7 @@
   cursor: pointer;
   opacity: 100%;
 }
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 320px) {
   .card__content {
     max-width: 288px;
   }
