@@ -17,12 +17,17 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="./images/avatar.jpg" alt="User avatar" class="profile__avatar" />
+          <img
+            src="./images/avatar.jpg"
+            alt="User avatar"
+            class="profile__avatar"
+          />
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/pencil.svg" alt="Edit Profile" class="edit" /> Edit Profile
+              <img src="./images/pencil.svg" alt="Edit Profile" class="edit" />
+              Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-btn">
@@ -50,7 +55,7 @@
 
       <div class="modal" id="edit-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">&times;</button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form name="edit_profile" class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -59,7 +64,11 @@
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
-              <input id="profile-description-input" type="text" class="modal__input" />
+              <input
+                id="profile-description-input"
+                type="text"
+                class="modal__input"
+              />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
