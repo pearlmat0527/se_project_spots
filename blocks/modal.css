@@ -10,269 +10,82 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  overflow: hidden; /* Prevents unnecessary scrolling */
 }
 
 .modal_opened {
   visibility: visible;
 }
 
-.modal__container {
-  background: #fff;
-  padding: 32px 50px;
-  width: 100%;
+.modal__content {
+  max-width: 80vw; /* Ensure modal does not exceed 80% of viewport width */
+  max-height: 80vh; /* Ensure modal does not exceed 80% of viewport height */
+  width: auto;
+  height: auto;
   box-sizing: border-box;
-  max-width: 730px;
+  background-color: #fff;
+  border-radius: 10px;
   position: relative;
-  border-radius: 8px;
-  max-height: 408px;
-}
-.modal__container-title {
-  display: flex;
-  align-items: center; /* Ensures both title and button align vertically */
-  justify-content: space-between; /* Ensures space between title and button */
-  width: 100%;
-  padding-bottom: 32px;
-  width: 630px;
-  height: 40px;
-  gap: 421px;
-  opacity: 0px;
-  /**padding-top: 32px;
-  padding-bottom: 32px;
-  padding-right: 50px;**/
-}
-
-.modal__title {
-  font-size: 32px;
-  font-weight: 500;
-  font-family: Poppins, sans-serif;
-  margin: 0; /* Removes unnecessary margin */
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 32px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: rgba(33, 33, 33, 1);
-}
-.modal__close-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto; /* Pushes button to the right */
-  width: 40px;
-  height: 40px;
-  gap: 0px;
-  opacity: 0.4px;
-}
-
-.modal__close-btn-image {
-  width: 22.63px;
-  height: 22.63px;
-  top: 20.49px;
-  left: 4.49px;
-  gap: 0px;
-  border: 2px 0px 0px 0px;
-  opacity: 0px;
-}
-.modal__submit-btn:hover {
-  cursor: pointer;
-  opacity: 100%;
-}
-
-.modal__label {
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 17.6px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  min-width: 49px;
-  min-height: 18px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 17.6px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal__input {
-  padding: 12px 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  color: #333;
-  box-sizing: border-box;
-  width: 630px;
-  height: 52px;
-  padding: 16px 12px 16px 12px;
-  gap: 10px;
-  border-radius: 8px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-  margin-bottom: 32px;
-  margin-top: 8px;
+.modal__img {
+  max-width: 100%; /* Ensures image does not exceed modal width */
+  max-height: 100%; /* Ensures image does not exceed modal height */
+  object-fit: contain; /* Ensures image fits without cropping */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.modal__submit-btn {
-  /**margin-top: 32px;**/
-  padding: 12px;
-  font-size: 16px;
-  background-color: rgba(33, 33, 33, 1);
-  color: rgba(252, 245, 229, 1);
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/close.svg") center no-repeat;
+  background-size: 35px 35px;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  align-self: center;
-  transition: background-color 0.2s ease-in-out;
-  width: 156px;
-  height: 52px;
-  padding: 18px 32px 18px 32px;
-  gap: 8px;
-  border-radius: 8px;
-  opacity: 0px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
 }
 
-@media (max-width: 320px) {
-  .modal__container {
-    padding: 12px;
-    width: 300px;
-    height: 336px;
-    position: relative;
+.modal__close:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal__content {
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 16px;
   }
 
-  .modal__title {
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: 0%;
-  }
-
-  .modal__container-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: auto;
-    padding-bottom: 24px;
-    /*  padding-top: 12px;*/
-    gap: 8px; /* Ensure proper spacing */
-    position: relative;
-  }
-
-  .modal__submit-btn {
-    font-size: 14px;
-    padding: 10px;
-    width: 40;
-    height: 40;
-    opacity: 0.4;
-  }
-
-  .modal__label {
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17.6px;
-    letter-spacing: 0%;
-    color: rgba(33, 33, 33, 0.7);
-  }
-
-  .modal__close-btn {
-    width: 40px; /* Adjusted for better balance */
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto; /* Pushes it to the right within the container */
-  }
-
-  .modal__close-btn-image {
-    width: 22.3px; /* Adjusted for better balance */
-    height: 22.3px;
-    opacity: 1;
-  }
-
-  .modal__input {
-    width: 100%; /* Makes the input responsive */
-    max-width: 276px; /* Ensures it doesn't stretch beyond a reasonable size */
-    height: 48px; /* Adjust height if needed */
-    padding: 16px 12px; /* Keeps spacing consistent */
-    box-sizing: border-box; /* Ensures padding doesn’t increase width */
-  }
-  .modal__submit-btn {
-    width: 100%;
-  }
-  .modal__input {
-    margin-bottom: 24px;
+  .modal__close {
+    width: 32px;
+    height: 32px;
+    top: 12px;
+    right: 12px;
   }
 }
 
-/**
-@media (max-width: 320px) {
-  .modal {
-    padding: 0 10px;
-  }
-  .modal__container {
+@media (max-width: 480px) {
+  .modal__content {
+    max-width: 95vw;
+    max-height: 95vh;
     padding: 12px;
-    border-radius: 8px;
-    min-width: 100%;
-    max-width: 330px;
-    max-height: 336px;
   }
-  .modal__title {
-    font-size: 20px;
-    margin: 12px 0 24px;
-    font-family: Poppins;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+
+  .modal__close {
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
   }
-  .modal__input {
-    padding-bottom: 24px;
-  }
-  .modal__close-btn {
-    top: 20.49px;
-    right: 4.49px;
-    width: 40px;
-    height: 40px;
-    gap: 0px;
-    opacity: 0.4px;
-    background-size: contain;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    opacity: 1;
-  }
-  .modal__label {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 17.6px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    padding-bottom: 8px;
-  }
-  .modal__submit-btn {
-    width: 100%;
-    gap: 8px;
-    border-radius: 8px;
-    opacity: 0px;
-    font-size: 14px;
-    padding: 10px;
-    margin-top: 24px;
-  }
-}**/
+}
