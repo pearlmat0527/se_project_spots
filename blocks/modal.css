@@ -15,6 +15,29 @@
 .modal_opened {
   visibility: visible;
 }
+.modal__content {
+  max-width: 80vw; /* Ensure modal does not exceed 80% of viewport width */
+  max-height: 80vh; /* Ensure modal does not exceed 80% of viewport height */
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  gap: 8px;
+  border-radius: 8px;
+  position: relative;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal__img {
+  max-width: 100%; /* Ensures image does not exceed modal width */
+  max-height: 100%; /* Ensures image does not exceed modal height */
+  object-fit: contain; /* Ensures image fits without cropping */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
 
 .modal__container {
   background: #fff;
@@ -79,6 +102,45 @@
   cursor: pointer;
   opacity: 100%;
 }
+.modal__close {
+  position: absolute;
+  background-image: url("../images/Group_Close.svg");
+  top: 0px; /* Adjust vertical position */
+  right: -52.5px; /* Move to the side */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; /* Ensure no background override */
+  color: white;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__close-preview {
+  border: 2px solid rgba(255, 255, 255, 1);
+  width: 22px;
+  height: 22px;
+  background-image: url("../images/Group_Close.svg");
+  background-size: contain; /* Ensures image fits */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block; /* Ensure it is visible */
+}
+
+.modal__close:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  transform: scale(1.1); /* Slight enlargement */
+}
 
 .modal__label {
   display: flex;
@@ -119,6 +181,35 @@
   opacity: 0px;
   margin-bottom: 32px;
   margin-top: 8px;
+}
+
+/* Hover Effect */
+.modal__input:hover {
+  border-color: #007bff; /* Change border color on hover */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glowing effect */
+}
+
+/* Optional: Focus Effect */
+.modal__input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
+  outline: none;
+}
+
+.modal__caption {
+  padding: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #fff;
+  background-color: rgba(33, 33, 33, 1);
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
 }
 .modal__submit-btn {
   /**margin-top: 32px;**/
@@ -194,6 +285,10 @@
     align-items: center;
     justify-content: center;
     margin-left: auto; /* Pushes it to the right within the container */
+    width: 40;
+    height: 40;
+    top: 80px;
+    left: 956px;
   }
 
   .modal__close-btn-image {
@@ -211,10 +306,42 @@
   }
   .modal__submit-btn {
     width: 100%;
+    background-color: rgba(33, 33, 33, 1);
   }
   .modal__input {
     margin-bottom: 24px;
   }
+  .modal__caption {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+  
+.modal__close {
+  position: absolute;
+  background-image: url("../images/Group_Close.svg");
+  top: 0px; /* Adjust vertical position */
+  right: -52.5px; /* Move to the side */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; /* Ensure no background override */
+  color: white;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0;
+  margin: 0;
+}
 }
 
 /**
