@@ -23,13 +23,13 @@
   width: auto;
   height: auto;
   box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 10px;
+  gap: 8px;
+  border-radius: 8px;
   position: relative;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -47,31 +47,137 @@
   right: 16px;
   width: 40px;
   height: 40px;
-  background: transparent url("../images/close.svg") center no-repeat;
-  background-size: 35px 35px;
-  border: none;
+  gap: 0px;
+  opacity: 0.4px;
+}
+
+.modal__close-btn-image {
+  width: 22.63px;
+  height: 22.63px;
+  top: 20.49px;
+  left: 4.49px;
+  gap: 0px;
+  border: 2px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.modal__submit-btn:hover {
   cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s ease-in-out;
+  opacity: 100%;
+}
+
+.modal__close {
+  position: absolute;
+  background-image: url("../images/Group_Close.svg");
+  top: 0px; /* Adjust vertical position */
+  right: -52.5px; /* Move to the side */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; /* Ensure no background override */
+  color: white;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__close-preview {
+  border: 2px solid rgba(255, 255, 255, 1);
+  width: 22px;
+  height: 22px;
+  background-image: url("../images/Group_Close.svg");
+  background-size: contain; /* Ensures image fits */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block; /* Ensure it is visible */
 }
 
 .modal__close:hover {
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  transform: scale(1.1); /* Slight enlargement */
 }
 
-/* Responsive adjustments */
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.modal__input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  width: 630px;
+  height: 52px;
+  padding: 16px 12px 16px 12px;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  margin-bottom: 32px;
+  margin-top: 8px;
+}
+
+.modal__input:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.modal__input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
+  outline: none;
+}
+
+.modal__caption {
+  padding: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #fff;
+  background-color: rgba(33, 33, 33, 1);
+}
+
+@media (max-width: 320px) {
+  .modal__container {
+    padding: 12px;
+    width: 300px;
+    height: 336px;
+    position: relative;
+  }
+}
+
 @media (max-width: 768px) {
   .modal__content {
     max-width: 90vw;
     max-height: 90vh;
     padding: 16px;
   }
-
-  .modal__close {
-    width: 32px;
-    height: 32px;
-    top: 12px;
-    right: 12px;
+  .modal__input {
+    width: 100%;
+    max-width: 276px;
+    height: 48px;
+    padding: 16px 12px;
+    box-sizing: border-box;
   }
 }
 
@@ -80,12 +186,5 @@
     max-width: 95vw;
     max-height: 95vh;
     padding: 12px;
-  }
-
-  .modal__close {
-    width: 28px;
-    height: 28px;
-    top: 10px;
-    right: 10px;
   }
 }

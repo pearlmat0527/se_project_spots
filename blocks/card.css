@@ -1,7 +1,5 @@
 .card {
-  position: relative; /* Allow absolute positioning within the card */
-  border-radius: 8px; /* Added to ensure consistent corner styling */
-  overflow: hidden; /* Ensures elements stay within card boundaries */
+  position: relative; /* Ensure correct absolute positioning for delete button */
 }
 
 .card__image {
@@ -38,7 +36,7 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Union.svg);
+  background-image: url("../images/Union.svg");
   width: 23px;
   height: 20px;
   border: none;
@@ -50,20 +48,21 @@
 .card__like-button:hover {
   cursor: pointer;
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 .card__like-button_liked {
   background-image: url("../images/Liked_icon_likes.svg");
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 .card__like-button_liked:hover {
   background-image: url("../images/StateLike_hover.svg");
 }
 
-/* Improved Delete Button - Corrected Position and Visibility */
 .card__delete-button {
-  position: absolute;
+  position: absolute; /* Fix position to the top-right */
   top: 10px;
   right: 10px;
   background-image: url("../images/trash.svg");
@@ -75,19 +74,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.8); /* Light background for visibility */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for better visibility */
-  z-index: 15; /* Ensures it stays above other content */
-  transition: background-color 0.3s ease;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5); /* Improve visibility */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hide delete button in new post dialogue */
-#add-card-modal .card__delete-button {
-  display: none;
-}
-
+/* Hover Effect */
 .card__delete-button:hover {
-  background-color: rgba(200, 0, 0, 1); /* Darker red on hover */
+  background-color: rgba(255, 0, 0, 0.7); /* Change background to red */
+  transform: scale(1.2); /* Slightly enlarge the button */
+  opacity: 0.9; /* Slightly increase visibility */
 }
 
 .card__delete-button img {
