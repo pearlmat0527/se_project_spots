@@ -1,12 +1,13 @@
 .card {
   position: relative; /* Ensure correct absolute positioning for delete button */
 }
+
 .card__image {
   height: 413px;
   width: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
+  border-radius: 8px; /* Matches card's border radius */
 }
 
 .card__content {
@@ -59,6 +60,7 @@
 .card__like-button_liked:hover {
   background-image: url("../images/StateLike_hover.svg");
 }
+
 .card__delete-button {
   position: absolute; /* Fix position to the top-right */
   top: 10px;
@@ -83,19 +85,20 @@
   transform: scale(1.2); /* Slightly enlarge the button */
   opacity: 0.9; /* Slightly increase visibility */
 }
+
 .card__delete-button img {
   width: 16px;
   height: 16px;
 }
+
 @media screen and (max-width: 320px) {
   .card__content {
     max-width: 288px;
   }
+
   .card__image {
     max-height: 288px;
-    /*border-radius: 8px;*/
     max-width: 288px;
-    /*padding-bottom: 12px;*/
   }
 
   .card__title {
@@ -104,30 +107,9 @@
     line-height: 16px;
     max-width: 250px;
   }
-  /*
-    font-size: 20px;
-    margin: 0;
-    line-height: 20px;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    margin: 0;
-    min-width: 95px;
-    width: 99%;
-
-    gap: 0px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-top: 12px;
-    padding-bottom: 22px;*/
 
   .card__like-button {
     opacity: 40%;
-    /*padding-top: 12px;
-    padding-bottom: 22px;*/
     background-repeat: no-repeat;
     margin-left: auto;
   }
