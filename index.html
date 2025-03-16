@@ -68,7 +68,7 @@
           <div class="modal__container-title">
             <h2 class="modal__title">Edit Profile</h2>
             <button type="button" class="modal__close-btn">
-              <img src="images/Group27.svg" class="modal__close__btn-image" />
+              <img src="" class="modal__close-image" />
             </button>
           </div>
           <form name="edit_profile" class="modal__form">
@@ -95,38 +95,37 @@
         <div class="modal__container-title">
           <h2 class="modal__title">New Post</h2>
           <button type="button" class="modal__close-btn">
-            <img
-              src="images/Group27.svg"
-              alt="Close Modal"
-              class="modal__close__btn-image"
-            />
+            <img src="" alt="" class="modal__close-image" />
           </button>
         </div>
         <form name="add_card" class="add-card-modal__form">
-          <label for="profile-name-input" class="modal__label">
+          <label for="add-card-link" class="modal__label">
             Image link
             <input
-              id="add-card-profile-name-input"
+              id="add-card-link"
               type="text"
               class="modal__input"
               placeholder="Paste a link to your picture"
               required
             />
           </label>
-          <label for="profile-description-input" class="modal__label">
+          <label for="add-card-description-input" class="modal__label">
             Caption
             <input
-              id="add-card-profile-description-input"
+              id="add-card-description-input"
               type="text"
               class="modal__input"
               placeholder="Type your caption"
               required
             />
           </label>
+
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
       </div>
     </div>
+  </div>
+    </body>
     <div class="modal" id="preview-modal">
       <div class="modal__content modal__content_type_preview">
         <button
@@ -134,20 +133,15 @@
           class="modal__close"
           aria-label="modal_close"
         ></button>
-        <img class="modal__img" src="" alt="" class="src" />
-
+        <img class="modal__img" src="" alt="" class="" />
 
         <p class="modal__caption"></p>
-
       </div>
     </div>
-    <div class="modal" id="preview-modal">
       <div class="modal__content modal__content_type_preview">
         <button
           type="button"
-
           class="modal__close modal__close-preview"
-
           aria-label="modal_close"
         ></button>
         <img class="modal__img" src="" alt="" class="src" />
@@ -156,6 +150,5 @@
     </div>
 
     <script defer src="./scripts/index.js"></script>
-
   </body>
 </html>

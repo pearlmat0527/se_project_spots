@@ -1,3 +1,4 @@
+/* Modal base style */
 .modal {
   position: fixed;
   top: 0;
@@ -9,12 +10,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
   visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
-.modal_opened {
+/* Modal opened state */
+.modal.modal_opened {
+  opacity: 1;
   visibility: visible;
 }
+
 .modal__content {
   max-width: 80vw; /* Ensure modal does not exceed 80% of viewport width */
   max-height: 80vh; /* Ensure modal does not exceed 80% of viewport height */
@@ -79,7 +85,7 @@
   color: rgba(33, 33, 33, 1);
 }
 .modal__close-btn {
-  background: none;
+  background-image: url("../images/Group27.svg");
   border: none;
   cursor: pointer;
   margin-left: auto; /* Pushes button to the right */
@@ -87,8 +93,25 @@
   height: 40px;
   gap: 0px;
   opacity: 0.4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
-
+.modal__close-btn:hover {
+  background-color: black; /* Black background on hover */
+  background-image: url("../images/Close_3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+/* Click effect (active state) */
+.modal__close-btn:active {
+  background-color: black; /* Black background on hover */
+  background-image: url("../images/Close_4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 .modal__close-btn-image {
   width: 22.63px;
   height: 22.63px;
@@ -145,7 +168,7 @@
 .modal__label {
   display: flex;
   flex-direction: column;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 17.6px;
@@ -156,7 +179,7 @@
   min-height: 18px;
   gap: 0px;
   opacity: 0px;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 17.6px;
@@ -185,32 +208,26 @@
 
 /* Hover Effect */
 .modal__input:hover {
-  border-color: #007bff; /* Change border color on hover */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glowing effect */
+  border-color: rgba(33, 33, 33, 1);
 }
 
-/* Optional: Focus Effect */
-.modal__input:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
-  outline: none;
+.modal__input:hover::placeholder {
+  border-color: rgba(33, 33, 33, 0.4);
 }
 
 .modal__caption {
   padding: 0;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
+  border-radius: 8px;
   margin: 0;
   line-height: 120%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: #fff;
   background-color: rgba(33, 33, 33, 1);
-  font-family: Poppins;
-  font-weight: 500;
   font-size: 20px;
-  line-height: 120%;
-  letter-spacing: 0%;
 }
+
 .modal__submit-btn {
   /**margin-top: 32px;**/
   padding: 12px;
@@ -229,6 +246,15 @@
   border-radius: 8px;
   opacity: 0px;
 }
+.modal__submit-btn:hover {
+  background: rgba(
+    33,
+    33,
+    33,
+    0.8
+  ); /* Darker semi-transparent shade on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
 
 @media (max-width: 320px) {
   .modal__container {
@@ -236,10 +262,13 @@
     width: 300px;
     height: 336px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .modal__title {
-    font-family: Poppins;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
@@ -267,7 +296,7 @@
   }
 
   .modal__label {
-    font-family: Poppins;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 17.6px;
@@ -318,32 +347,35 @@
     line-height: 120%;
     letter-spacing: 0%;
   }
-  
-.modal__close {
-  position: absolute;
-  background-image: url("../images/Group_Close.svg");
-  top: 0px; /* Adjust vertical position */
-  right: -52.5px; /* Move to the side */
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent; /* Ensure no background override */
-  color: white;
-  font-size: 20px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  padding: 0;
-  margin: 0;
-}
-}
+  .modal__close {
+    position: absolute;
+    background-image: url("../images/Group_Close.svg");
+    top: 0px; /* Adjust vertical position */
+    right: -52.5px; /* Move to the side */
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent; /* Ensure no background override */
+    color: white;
+    font-size: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0;
+    margin: 0;
+  }
+  .modal-content {
+    padding: 0;
+    margin: 0;
+  }
+}
 /**
 @media (max-width: 320px) {
   .modal {

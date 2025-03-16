@@ -13,7 +13,7 @@ const initialCards = [
   },
   {
     name: "A very long bridge, over the forest and through the trees",
-    link: "/Users/pearlymathew/Desktop/Triple_ten_projects/se_project_spots/images/4-photo-by-maurice-laschet-from-pexels.jpg",
+    link: "../images/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
     name: "Tunnel with morning light",
@@ -47,6 +47,10 @@ const previewModalCaptionEl = previewmodal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
+const previewModalCloseBtn = previewmodal.querySelector(".modal__close");
+// Get the values from the form inputs
+const imageLink = document.querySelector("#add-card-link").value;
+const caption = document.querySelector("#add-card-description-input").value;
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -57,14 +61,11 @@ function getCardElement(data) {
 
   const cardLikedBtn = cardElement.querySelector(".card__like-button");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
-  const previewModalCloseBtn = previewmodal.querySelector(".modal__close");
-
 
   // Set image and caption
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
-
 
   // Add like functionality
   cardLikedBtn.addEventListener("click", () => {
@@ -79,7 +80,6 @@ function getCardElement(data) {
     closeModal(previewmodal); // Close the preview modal
   });
 
-
   // Add image click functionality to show preview
   cardImage.addEventListener("click", () => {
     openModal(previewmodal);
@@ -87,7 +87,6 @@ function getCardElement(data) {
     previewModalImageEl.alt = data.name;
     previewModalCaptionEl.textContent = data.name;
   });
-
 
   return cardElement;
 }
@@ -130,7 +129,6 @@ profileAddButton.addEventListener("click", () => {
   openModal(addCardModal);
 });
 
-
 // Render Initial Cards
 initialCards.forEach((item) => {
   const cardEl = getCardElement(item);
@@ -142,14 +140,6 @@ const addCardForm = document.querySelector(".add-card-modal__form");
 
 addCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  // Get the values from the form inputs
-  const imageLink = document.querySelector(
-    "#add-card-profile-name-input"
-  ).value;
-  const caption = document.querySelector(
-    "#add-card-profile-description-input"
-  ).value;
 
   // Create a new card object
   const newCardData = {
@@ -163,10 +153,7 @@ addCardForm.addEventListener("submit", (event) => {
   // Prepend the new card to the left side of the card list
   cardList.prepend(newCard);
 
-  // Close the "New Post" modal
-  addCardModal.classList.remove("modal_open");
-
+  closeModal(addCardModal);
   // Reset the form fields
   addCardForm.reset();
 });
-
