@@ -134,12 +134,14 @@ initialCards.forEach((item) => {
   const cardEl = getCardElement(item);
   cardList.append(cardEl);
 });
-
-// Handle adding new card from modal
 const addCardForm = document.querySelector(".add-card-modal__form");
 
 addCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  // Get the values from the form inputs inside the event listener
+  const imageLink = document.querySelector("#add-card-link").value;
+  const caption = document.querySelector("#add-card-description-input").value;
 
   // Create a new card object
   const newCardData = {
@@ -154,6 +156,7 @@ addCardForm.addEventListener("submit", (event) => {
   cardList.prepend(newCard);
 
   closeModal(addCardModal);
+
   // Reset the form fields
   addCardForm.reset();
 });
