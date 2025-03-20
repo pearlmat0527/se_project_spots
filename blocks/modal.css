@@ -85,7 +85,7 @@
   color: rgba(33, 33, 33, 1);
 }
 .modal__close-btn {
-  background-image: url("../images/Group27.svg");
+  background-image: url("../images/Group_27_update.svg");
   border: none;
   cursor: pointer;
   margin-left: auto; /* Pushes button to the right */
@@ -273,7 +273,8 @@
     width: 23px;
     height: 23px;
     /**top: 10px;**/
-    right: 20px;
+    top: -30px;
+    right: 0px;
     background-image: url("../images/Group_Close.svg");
     background-size: contain; /* Ensures image fits */
     background-repeat: no-repeat;
@@ -320,6 +321,15 @@
     font-size: 16px;
     line-height: 110.00000000000001%;
     color: #666;
+  }
+
+  .modal__content_type_preview {
+    max-width: 90vw; /* Ensures the modal width scales appropriately */
+    padding: 0; /* Removes padding for a cleaner look */
+  }
+
+  .modal__img {
+    max-width: 90vw; /* Ensures the image fits the modal width */
   }
 
   .modal__input {
