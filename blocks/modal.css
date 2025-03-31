@@ -53,7 +53,7 @@
   max-width: 730px;
   position: relative;
   border-radius: 8px;
-  max-height: 408px;
+  max-height: 455px;
 }
 .modal__container-title {
   display: flex;
@@ -185,6 +185,8 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+
+  display: block;
 }
 
 .modal__input {
@@ -201,8 +203,17 @@
   border-radius: 8px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  margin-bottom: 32px;
+  margin-bottom: 0px;
   margin-top: 8px;
+}
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+.modal__error {
+  margin-top: 8px;
+  display: block;
+  color: red;
+  margin-bottom: 32px;
 }
 
 /* Hover Effect */
@@ -260,10 +271,15 @@
   .modal__container {
     width: 95%;
     padding: 12px;
+    max-height: 432px;
   }
 
+  .modal__error {
+    margin-bottom: 24px;
+  }
   .modal__input {
     font-size: 16px;
+    margin-bottom: 8px;
   }
 
   .modal__submit-btn {
