@@ -56,12 +56,33 @@ const captionInput = document.querySelector("#add-card-description-input");
 
 previewModalCloseBtn.addEventListener("click", () => closeModal(previewmodal));
 
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+
+  document.addEventListener("keydown", closeModalOnEscape);
+  modal.addEventListener("click", closeModalOnOverlayClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+
+  // Remove event listeners to prevent memory leaks
+  document.removeEventListener("keydown", closeModalOnEscape);
+  modal.removeEventListener("click", closeModalOnOverlayClick);
+}
+
+function closeModalOnEscape(event) {
+  if (event.key === "Escape") {
+    const openModals = document.querySelectorAll(".modal_opened");
+    openModals.forEach((modal) => closeModal(modal));
+  }
+}
+
+function closeModalOnOverlayClick(event) {
+  if (event.target.classList.contains("modal")) {
+    closeModal(event.target);
+  }
 }
 
 function getCardElement(data) {
@@ -74,21 +95,19 @@ function getCardElement(data) {
   const cardLikedBtn = cardElement.querySelector(".card__like-button");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
 
-  // Set image and caption
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
+
 
   cardLikedBtn.addEventListener("click", () => {
     cardLikedBtn.classList.toggle("card__like-button_liked");
   });
 
-  // Delete functionality
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove();
   });
 
-  // Preview functionality
   cardImage.addEventListener("click", () => {
     openModal(previewmodal);
     previewModalImageEl.src = data.link;
@@ -120,8 +139,16 @@ function handleAddCardFormSubmit(event) {
 
     closeModal(addCardModal);
     addCardForm.reset(); // Clear form inputs
-    disableButton(editModalCloseBtn);
+
+    const addButton = addCardForm.querySelector(".modal__submit-btn");
+    disableButton(addButton);
   }
+}
+
+function disableButton(button) {
+  button.classList.add("modal__button_disabled");
+  button.disabled = true;
+  button.style.opacity = "0.5";
 }
 
 initialCards.forEach((item) => {
