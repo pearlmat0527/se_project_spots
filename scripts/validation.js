@@ -2,9 +2,9 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn", // Fixed missing dot prefix
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  inactiveButtonClass: "modal__submit-btn_disabled",
+  inputErrorClass: ".modal__input_type_error",
+  errorClass: ".modal__error_visible",
 };
 
 const showInputError = (formEl, inputEl, errorMessage, config) => {
@@ -37,8 +37,7 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonEl.classList.add(config.inactiveButtonClass);
-    buttonEl.disabled = true;
+    disableValidationButton(buttonEl, config);
   } else {
     buttonEl.classList.remove(config.inactiveButtonClass);
     buttonEl.disabled = false;
@@ -55,10 +54,9 @@ const resetValidation = (formEl, config = settings) => {
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
   inputList.forEach((inputEl) => hideInputError(formEl, inputEl, config));
-  toggleButtonState(inputList, buttonElement, config);
+  //toggleButtonState(inputList, buttonElement, config);
   disableValidationButton(buttonElement, config);
 };
-
 
 const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));

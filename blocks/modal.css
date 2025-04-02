@@ -266,6 +266,10 @@
   ); /* Darker semi-transparent shade on hover */
   transform: scale(1.05); /* Slightly enlarges the button */
 }
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+  pointer-events: none; /* Ensures the button is non-clickable */
+}
 
 @media (max-width: 320px) {
   .modal__container {
