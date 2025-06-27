@@ -67,7 +67,7 @@
   justify-content: space-between;
 
   color: rgba(33, 33, 33, 1);
-  width: 420px;
+
   height: 190px;
 
   max-height: 190px; /* Optional: Match avatar height for alignment */
@@ -159,12 +159,11 @@
   .profile {
     flex-direction: column;
     align-items: center;
-    max-width: 288px;
 
     padding: 20px 0px 20px;
 
     width: 288px;
-    height: 274px;
+    height: 320px;
 
     border-bottom-width: 1px;
     padding-bottom: 20px;
@@ -214,5 +213,24 @@
     /*justify-content: center; /* Horizontally center */
     align-self: center;
     /* Vertically center */
+  }
+
+  .profile__avatar-overlay {
+    position: absolute;
+    top: 85px;
+    left: 39px;
+    width: 111.34px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    color: #fff;
+    font-size: 7px;
+    font-weight: 500;
+    border-radius: 90px;
+
+    pointer-events: none; /* If you don’t want it to block clicks */
   }
 }

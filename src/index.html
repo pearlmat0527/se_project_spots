@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Spots</title>
-    <link rel="stylesheet" href="./index.css" />
+  <!--  <link rel="stylesheet" href="./pages/index.css" />-->
   </head>
   <body>
     <div class="page">
@@ -99,48 +99,47 @@
       </footer>
 
       <!-- Edit Profile Modal -->
-      <div class="modal" id="edit-modal">
-        <div class="modal__container">
-          <div class="modal__container-title">
-            <h2 class="modal__title">Edit Profile</h2>
-            <button
-              type="button"
-              class="modal__close-btn"
-              aria-label="Close modal"
-            ></button>
-          </div>
-          <form name="edit_profile" class="modal__form" novalidate>
-            <label for="edit-name-input" class="modal__label">
-              Name
-              <input
-                id="edit-name-input"
-                type="text"
-                class="modal__input"
-                minlength="2"
-                maxlength="40"
-                required
-              />
-              <span id="edit-name-input-error" class="modal__error"></span>
-            </label>
-            <label for="edit-description-input" class="modal__label">
-              Description
-              <input
-                id="edit-description-input"
-                type="text"
-                class="modal__input"
-                minlength="2"
-                maxlength="200"
-                required
-              />
-              <span
-                id="edit-description-input-error"
-                class="modal__error"
-              ></span>
-            </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
-          </form>
-        </div>
-      </div>
+<!-- Edit Profile Modal -->
+<div class="modal" id="edit-modal">
+  <div class="modal__container">
+    <div class="modal__container-title">
+      <h2 class="modal__title">Edit Profile</h2>
+      <button
+        type="button"
+        class="modal__close-btn"
+        aria-label="Close modal"
+      ></button>
+    </div>
+    <form name="edit_profile" class="modal__form" novalidate>
+      <label for="edit-name-input" class="modal__label">
+        Name
+        <input
+          id="edit-name-input"
+          type="text"
+          class="modal__input"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+        <span id="edit-name-input-error" class="modal__error"></span>
+      </label>
+      <label for="edit-description-input" class="modal__label">
+        Description
+        <input
+          id="edit-description-input"
+          type="text"
+          class="modal__input"
+          minlength="2"
+          maxlength="200"
+          required
+        />
+        <span id="edit-description-input-error" class="modal__error"></span>
+      </label>
+      <button type="submit" class="modal__submit-btn">Save</button>
+    </form>
+  </div>
+</div>
+
 
       <!-- Add Card Modal -->
       <div class="modal" id="add-card-modal">
@@ -214,8 +213,8 @@
 
       <!-- Delete Confirmation Modal -->
 <div class="modal modal_type_delete" id="delete-modal">
-  <div class="modal__container">
-    <button type="button" class=  class="modal__close modal__close-preview modal__close_type_delete"
+  <div class="modal__container-delete">
+    <button type="button" class="modal__close modal__close-preview modal__close_type_delete"
     aria-label="Close modal"></button>
     <div class="modal__container-delete-title">
       <h2 class="modal__title">
@@ -226,6 +225,7 @@
       <div class="modal__button-group">
         <button type="submit" class="modal__submit-btn modal__submit-btn_delete">Delete</button>
         <button type="button" class="modal__submit-btn modal__submit-btn_cancel" id="cancel-delete-btn">Cancel</button>
+
       </div>
     </form>
   </div>
@@ -262,7 +262,7 @@
           class="modal__close modal__close-preview"
           aria-label="modal_close"
         ></button>
-        <img class="modal__img" src="404image" alt="" />
+        <img class="modal__img" src="" alt="" />
 
         <p class="modal__caption"></p>
       </div>
@@ -280,6 +280,6 @@
         </div>!-->
       </div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <!--<script type="module" src="./pages/index.js"></script>-->
   </body>
 </html>

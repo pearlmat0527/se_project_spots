@@ -10,6 +10,7 @@
   width: 100%;
   margin: 0 auto;
 }
+
 @media screen and (max-width: 627px) {
   .page__section {
     /*top: 1145px; /* Retaining the last specified 'top' value */

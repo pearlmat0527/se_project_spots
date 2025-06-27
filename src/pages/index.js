@@ -10,7 +10,7 @@ const editModal = document.querySelector("#edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewModal = document.querySelector("#preview-modal");
 const deleteModal = document.querySelector("#delete-modal");
-const deleteForm = deleteModal?.querySelector(".delete__form");
+const deleteForm = deleteModal.querySelector(".modal_delete__form");
 
 const editForm = editModal.querySelector(".modal__form");
 const addCardForm = addCardModal.querySelector(".modal__form");
