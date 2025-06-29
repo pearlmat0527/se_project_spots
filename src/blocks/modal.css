@@ -19,6 +19,10 @@
   opacity: 1;
 }
 
+.modal__submit-btn_type_delete {
+  background-color: #d32f2f;
+}
+
 /* ==========================================================================
      ELEMENT: modal__content
      ========================================================================== */
@@ -94,6 +98,12 @@
   border-radius: 8px;
   padding: 32px 20px;
   gap: 32px;
+}
+.modal__submit-btn.modal__submit-btn_type_cancel-delete{
+  background-color: white;
+  color: black;
+  border: 1px solid #212121;
+
 }
 
 /* Modifier: modal__container_type_edit */
@@ -247,8 +257,9 @@
   width: 23px;
   height: 23px;
   position: absolute;
-  top: -20px;
-  right: -17px;
+
+  left: 600px;
+  top: 10px;
   background-image: url("../images/Group_Close.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -286,8 +297,8 @@
      ELEMENT: modal__header_type_edit-avatar
      ========================================================================== */
 .modal__header_type_edit-avatar {
-  width: 590px;
-  height: 4020pxpx;
+  width: 630px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -375,11 +386,16 @@
   opacity: 0.5;
   pointer-events: none;
 }
+.modal__submit-btn.modal__submit-btn_type_delete {
+  background-color: #ff6565;
+  color: white;
+}
 
 /* Modifier: modal__submit-btn_delete */
 .modal__submit-btn_delete {
-  background-color: #d32f2f;
-  color: white;
+  background-color: #ff6565;
+  color: #212121;
+  
 }
 
 .modal__submit-btn_delete:hover {
