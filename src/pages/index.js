@@ -235,7 +235,7 @@ function handleDeleteSubmit(evt) {
     });
 }
 
-deleteForm?.addEventListener("submit", handleDeleteSubmit);
+deleteForm.addEventListener("submit", handleDeleteSubmit);
 
 document.querySelector("#cancel-delete-btn")?.addEventListener("click", () => {
   closeModal(deleteModal);
@@ -256,9 +256,18 @@ profileAddButton.addEventListener("click", () => {
 editForm.addEventListener("submit", handleEditFormSubmit);
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
+// modals.forEach((modal) => {
+//   const closeBtn = modal.querySelector(".modal__close-btn, .modal__close");
+//   if (closeBtn) closeBtn.addEventListener("click", () => closeModal(modal));
+// });
+
 modals.forEach((modal) => {
-  const closeBtn = modal.querySelector(".modal__close-btn, .modal__close");
-  if (closeBtn) closeBtn.addEventListener("click", () => closeModal(modal));
+  const closeButtons = modal.querySelectorAll(
+    ".modal__close-btn, .modal__close, .modal__close-preview"
+  );
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => closeModal(modal));
+  });
 });
 
 avatarEditButton.addEventListener("click", () => {

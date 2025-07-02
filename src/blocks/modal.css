@@ -2,6 +2,15 @@
    BLOCK: modal
    ========================================================================== */
 .modal {
+  /* position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+  z-index: 999; */
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -9,6 +18,8 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   transition: visibility 0.3s, opacity 0.3s ease-in;
   z-index: 999;
 }
@@ -17,6 +28,7 @@
 .modal_opened {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal__submit-btn_type_delete {
@@ -99,11 +111,10 @@
   padding: 32px 20px;
   gap: 32px;
 }
-.modal__submit-btn.modal__submit-btn_type_cancel-delete{
+.modal__submit-btn.modal__submit-btn_type_cancel-delete {
   background-color: white;
   color: black;
   border: 1px solid #212121;
-
 }
 
 /* Modifier: modal__container_type_edit */
@@ -257,15 +268,26 @@
   width: 23px;
   height: 23px;
   position: absolute;
+  background-color: transparent;
+  border: none;
 
-  left: 600px;
-  top: 10px;
+  top: -15px;
   background-image: url("../images/Group_Close.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  transform: translate(50%, -50%);
 }
 
+/* ==========================================================================
+     ELEMENT: modal__img-wrapper
+     ========================================================================== */
+.modal__img-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content;
+}
 /* ==========================================================================
      ELEMENT: modal__input
      ========================================================================== */
@@ -395,7 +417,6 @@
 .modal__submit-btn_delete {
   background-color: #ff6565;
   color: #212121;
-  
 }
 
 .modal__submit-btn_delete:hover {
@@ -470,7 +491,6 @@
 
   .modal__title_type_delete {
     font-size: 18px;
-    line-height: 22px;
   }
 
   .modal__submit-btn,
@@ -485,7 +505,7 @@
   }
 
   .modal__close-preview {
-    top: -30px;
+    top: -20px;
     right: 0;
   }
 
