@@ -153,6 +153,11 @@
      ELEMENT: modal__img
      ========================================================================== */
 .modal__img {
+  /* max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
   max-width: 80vw;
   max-height: 80vh;
   object-fit: contain;
@@ -264,29 +269,46 @@
 /* ==========================================================================
      ELEMENT: modal__close-preview
      ========================================================================== */
-.modal__close-preview {
+/* .modal__close-preview {
   width: 23px;
   height: 23px;
   position: absolute;
   background-color: transparent;
   border: none;
-
   top: -15px;
   background-image: url("../images/Group_Close.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   transform: translate(50%, -50%);
+} */
+.modal__close-preview {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: -15px;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: transparent;
+  border: none;
+  background-image: url("../images/Group_Close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* ==========================================================================
      ELEMENT: modal__img-wrapper
      ========================================================================== */
 .modal__img-wrapper {
-  position: relative;
+  /* position: relative;
   display: flex;
   justify-content: flex-end;
-  width: fit-content;
+  width: fit-content; */
+  position: relative;
+  display: flex;
+  justify-content: center; /* center image */
+  width: 100%;
 }
 /* ==========================================================================
      ELEMENT: modal__input
@@ -445,6 +467,9 @@
   .modal__container {
     width: 95%;
     padding: 12px;
+  }
+  .modal__img {
+    max-width: 90vw;
   }
 
   .modal__container_type_edit {
