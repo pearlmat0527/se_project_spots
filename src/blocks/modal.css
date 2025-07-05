@@ -1,0 +1,609 @@
+/* ==========================================================================
+   BLOCK: modal
+   ========================================================================== */
+.modal {
+  /* position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+  z-index: 999; */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+  z-index: 999;
+}
+
+/* Modifier: modal_opened */
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__submit-btn_type_delete {
+  background-color: #d32f2f;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__content
+     ========================================================================== */
+.modal__content {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+/* Modifier: modal__content_type_preview */
+.modal__content_type_preview {
+  max-width: none;
+  padding: 0;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__container
+     ========================================================================== */
+.modal__container {
+  background: #fff;
+  padding: 32px 50px;
+  max-width: 730px;
+  width: 100%;
+  max-height: 455px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Modifier: modal__container_type_preview */
+.modal__container_type_preview {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+/* Legacy Modifier: modal__container-delete */
+.modal__container-delete {
+  background: #fff8f8;
+  border: 2px solid #f8d7da;
+  box-shadow: 0 8px 24px rgba(220, 0, 0, 0.1);
+  height: 172px;
+  width: 630px;
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 8px;
+  gap: 32px;
+  padding: 32px 20px;
+}
+
+/* Modifier: modal__container_type_delete */
+.modal__container_type_delete {
+  background: #fff8f8;
+  border: 2px solid #f8d7da;
+  box-shadow: 0 8px 24px rgba(220, 0, 0, 0.1);
+  height: 172px;
+  width: 630px;
+
+  position: absolute;
+  border-radius: 8px;
+  padding: 32px 20px;
+  gap: 32px;
+}
+.modal__submit-btn.modal__submit-btn_type_cancel-delete {
+  background-color: white;
+  color: black;
+  border: 1px solid #212121;
+}
+
+/* Modifier: modal__container_type_edit */
+.modal__container_type_edit {
+  width: 730px;
+  height: 298px;
+  top: 262px;
+  left: 355px;
+  position: absolute;
+  border-radius: 8px;
+  padding: 32px 50px;
+  background-color: #f7faff;
+  border: 2px solid #4b8df8;
+  box-shadow: 0 12px 48px rgba(75, 141, 248, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* Modifier: modal__container_type_edit-avatar */
+.modal__container_type_edit-avatar {
+  background-color: #f7faff;
+  border: 2px solid #4b8df8;
+  box-shadow: 0 12px 48px rgba(75, 141, 248, 0.25);
+  width: 730px;
+  padding: 32px 50px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__img
+     ========================================================================== */
+.modal__img {
+  /* max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+     ELEMENT: modal__title
+     ========================================================================== */
+.modal__title {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #212121;
+  line-height: 32px;
+}
+
+/* Modifier: modal__title_type_edit-avatar */
+.modal__title_type_edit-avatar {
+  font-size: 24px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Modifier: modal__title_type_delete */
+.modal__title_type_delete {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1; /* 100% converted to unitless line-height */
+  letter-spacing: 0; /* Changed from 0% to unitless 0 for consistency */
+  text-align: center;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__container-title
+     ========================================================================== */
+.modal__container-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+  padding-bottom: 32px;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__close-btn
+     ========================================================================== */
+.modal__close-btn {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/Group_27_update.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.modal__close-btn:hover {
+  opacity: 1;
+}
+
+.modal__close-btn_type_delete {
+  height: 40px;
+  left: 640px;
+  position: absolute;
+  top: -7px;
+  width: 40px;
+  background-image: url("../images/Close_delete.svg");
+  background-color: transparent;
+}
+.modal__form_type_delete {
+  width: 332px;
+  height: 52px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto; /* centers the form horizontally */
+}
+/* ==========================================================================
+     ELEMENT: modal__close
+     ========================================================================== */
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: -52.5px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/Group_Close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.modal__close:hover {
+  opacity: 0.4;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+     ELEMENT: modal__close-preview
+     ========================================================================== */
+/* .modal__close-preview {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: -15px;
+  background-image: url("../images/Group_Close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(50%, -50%);
+} */
+.modal__close-preview {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: -15px;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: transparent;
+  border: none;
+  background-image: url("../images/Group_Close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__img-wrapper
+     ========================================================================== */
+.modal__img-wrapper {
+  /* position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content; */
+  position: relative;
+  display: flex;
+  justify-content: center; /* center image */
+  width: 100%;
+}
+/* ==========================================================================
+     ELEMENT: modal__input
+     ========================================================================== */
+.modal__input {
+  padding: 16px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.modal__input:hover {
+  border-color: #212121;
+}
+
+/* Modifier: modal__input_type_error */
+.modal__input_type_error {
+  border-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Modifier: modal__input_type_avatar-url */
+.modal__input_type_avatar-url {
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__header_type_edit-avatar
+     ========================================================================== */
+.modal__header_type_edit-avatar {
+  width: 630px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__form_type_edit-avatar
+     ========================================================================== */
+.modal__form_type_edit-avatar {
+  width: 630px;
+  height: 162px;
+  gap: 32px;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__label
+     ========================================================================== */
+.modal__label {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__error
+     ========================================================================== */
+.modal__error {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  color: red;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__caption
+     ========================================================================== */
+.modal__caption {
+  padding: 4px 8px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #212121;
+  color: white;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__button-group
+     ========================================================================== */
+.modal__button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+     ELEMENT: modal__submit-btn
+     ========================================================================== */
+.modal__submit-btn {
+  font-family: "Poppins", sans-serif;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #212121;
+  color: #fcf5e5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 156px;
+  height: 52px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.modal__submit-btn:hover {
+  opacity: 1;
+  background-color: rgba(33, 33, 33, 0.8);
+  transform: scale(1.05);
+}
+
+/* Modifier: modal__submit-btn_disabled */
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.modal__submit-btn.modal__submit-btn_type_delete {
+  background-color: #ff6565;
+  color: white;
+}
+
+/* Modifier: modal__submit-btn_delete */
+.modal__submit-btn_delete {
+  background-color: #ff6565;
+  color: #212121;
+}
+
+.modal__submit-btn_delete:hover {
+  background-color: #b71c1c;
+}
+
+/* Modifier: modal__submit-btn_cancel */
+.modal__submit-btn_cancel {
+  background-color: transparent;
+  color: #444;
+  border: 1px solid #ccc;
+}
+
+.modal__submit-btn_cancel:hover {
+  background-color: #eee;
+}
+
+.modal__button-group_type_delete {
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+     MEDIA QUERIES: mobile < 320px
+     ========================================================================== */
+@media (max-width: 320px) {
+  .modal__container {
+    width: 95%;
+    padding: 12px;
+  }
+  .modal__img {
+    max-width: 90vw;
+  }
+
+  .modal__container_type_edit {
+    width: 300px;
+    height: 222px;
+    top: 239px;
+    left: 10px;
+    border-radius: 8px;
+    padding: 12px;
+    gap: 12px;
+  }
+  /* ==========================================================================
+   Modifier: modal__container_type_delete (Mobile Override or Custom Layout)
+   ========================================================================== */
+  .modal__container_type_delete {
+    width: 300px;
+    height: 208px;
+    top: 214px;
+    left: 10px;
+    border-radius: 8px;
+    padding: 12px;
+    gap: 20px;
+    position: absolute;
+  }
+  /* === Modifier: modal__submit-btn_type_delete === */
+  .modal__submit-btn_type_delete {
+    width: 156px;
+    height: 52px;
+    padding: 18px 32px;
+    border-radius: 8px;
+    gap: 8px; /* applies if inside a flex or grid container */
+    background-color: #d32f2f;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__title_type_delete {
+    font-size: 18px;
+  }
+
+  .modal__submit-btn,
+  .modal__submit-button {
+    width: 100%;
+    height: 56px;
+  }
+
+  .modal__button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__close-preview {
+    top: -20px;
+    right: 0;
+  }
+
+  .modal__input {
+    font-size: 16px;
+    height: 54px;
+    margin-bottom: 24px;
+  }
+
+  .modal__close-button_type_delete {
+    top: -36px;
+    right: 0;
+  }
+
+  .modal__container-title_type_edit-avatar,
+  .modal__header_type_edit-avatar {
+    width: 276px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal__input_type_avatar-url {
+    width: 276px;
+    height: 48px;
+    padding: 16px 12px;
+    border-width: 1px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    gap: 10px;
+  }
+
+  .modal__form_type_delete {
+    width: 152px;
+    height: 52px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal__submit-btn_type_edit-avatar {
+    width: 276px;
+    height: 52px;
+    padding: 18px 32px;
+    border-radius: 8px;
+    gap: 8px;
+  }
+
+  .modal__form_type_edit-avatar {
+    width: 0px;
+  }
+
+  .modal__container_type_edit-avatar {
+    width: 300px;
+    gap: 20px;
+  }
+
+  .modal__label_type_edit-avatar {
+    width: 110px;
+    height: 18px;
+    display: inline-block;
+  }
+
+  .modal__button-group_type_delete {
+    width: 156px;
+  }
+  .modal__close-btn_type_delete {
+    height: 40px;
+    left: 264px;
+    position: absolute;
+    top: -50px;
+    width: 40px;
+  }
+}

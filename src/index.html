@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Market optimization" />
+    <meta name="author" content="Pearly Mathew" />
+    <meta name="description" content="Coffee Shop" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Spots</title>
+  <!--  <link rel="stylesheet" href="./pages/index.css" />-->
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="<%= require('./images/Logo.svg') %>"
+          alt="Spots Logo"
+          class="header__logo"
+        />
+      </header>
+
+      <main class="content">
+        <section class="profile page__section">
+          <div class="profile__avatar">
+            <button class="profile__avatar-btn" aria-label="Edit avatar">
+              <img
+                src="<%= require('./images/avatar.jpg') %>"
+                alt="User avatar"
+                class="profile__avatar-image"
+              />
+              <div class="profile__avatar-overlay">
+                <img
+                  src="<%= require('./images/Group_2.svg') %>"
+                  alt="Edit icon"
+                  class="profile__avatar-icon"
+                />
+                <span class="profile__avatar-label">Edit Avatar</span>
+              </div>
+            </button>
+          </div>
+
+          <div class="profile__column">
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__description">Civil Aviator</p>
+            <button
+              type="button"
+              class="profile__edit-btn"
+              aria-label="Edit profile"
+            >
+              <img
+                src="<%= require('./images/pencil.svg') %>"
+                alt="Edit icon"
+                class="edit"
+              />
+              Edit Profile
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="profile__add-btn"
+            aria-label="Add new post"
+          >
+            <img
+              src="<%= require('./images/plus.svg') %>"
+              alt="Plus icon"
+              class="edit"
+            />
+            New Post
+          </button>
+        </section>
+
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+          <template id="card-template">
+            <li class="card">
+              <img src="" alt="" class="card__image" />
+              <div class="card__content">
+                <h2 class="card__title"></h2>
+                <button
+                  type="button"
+                  class="card__delete-button"
+                  aria-label="Delete post"
+                ></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="Like post"
+                ></button>
+              </div>
+            </li>
+          </template>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">2023 &copy; Spots</p>
+      </footer>
+
+      <!-- Edit Profile Modal -->
+<!-- Edit Profile Modal -->
+<div class="modal" id="edit-modal">
+  <div class="modal__container">
+    <div class="modal__container-title">
+      <h2 class="modal__title">Edit Profile</h2>
+      <button
+        type="button"
+        class="modal__close-btn"
+        aria-label="Close modal"
+      ></button>
+    </div>
+    <form name="edit_profile" class="modal__form" novalidate>
+      <label for="edit-name-input" class="modal__label">
+        Name
+        <input
+          id="edit-name-input"
+          type="text"
+          class="modal__input"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+        <span id="edit-name-input-error" class="modal__error"></span>
+      </label>
+      <label for="edit-description-input" class="modal__label">
+        Description
+        <input
+          id="edit-description-input"
+          type="text"
+          class="modal__input"
+          minlength="2"
+          maxlength="200"
+          required
+        />
+        <span id="edit-description-input-error" class="modal__error"></span>
+      </label>
+      <button type="submit" class="modal__submit-btn">Save</button>
+    </form>
+  </div>
+</div>
+
+
+      <!-- Add Card Modal -->
+      <div class="modal" id="add-card-modal">
+        <div class="modal__container">
+          <div class="modal__container-title">
+            <h2 class="modal__title">New Post</h2>
+            <button
+              type="button"
+              class="modal__close-btn"
+              aria-label="Close modal"
+            ></button>
+          </div>
+          <form name="add_card" class="modal__form" novalidate>
+            <label for="add-card-link" class="modal__label">
+              Image link
+              <input
+                id="add-card-link"
+                type="url"
+                class="modal__input"
+                required
+              />
+              <span id="add-card-link-error" class="modal__error"></span>
+            </label>
+            <label for="add-card-title" class="modal__label">
+              Title
+              <input
+                id="add-card-title"
+                type="text"
+                class="modal__input"
+                minlength="1"
+                maxlength="30"
+                required
+              />
+              <span id="add-card-title-error" class="modal__error"></span>
+            </label>
+            <button type="submit" class="modal__submit-btn">Create</button>
+          </form>
+        </div>
+      </div>
+<!-- Edit Avatar Modal -->
+    <!-- Edit Avatar Modal -->
+      <!-- Edit Avatar Modal -->
+      <div class="modal modal_type_edit-avatar" id="edit-avatar-modal">
+        <div class="modal__container modal__container_type_edit-avatar">
+          <div class="modal__header modal__header_type_edit-avatar">
+            <h2 class="modal__title modal__title_type_edit-avatar">Edit Profile Avatar</h2>
+            <button type="button" class="modal__close-btn modal__close-btn_type_edit-avatar" aria-label="Close modal"></button>
+          </div>
+          <form name="edit_avatar" class="modal__form modal__form_type_edit-avatar" novalidate>
+            <label for="edit-avatar-input" class="modal__field">
+              <span class="modal__label modal__label_type_edit-avatar">Profile Picture</span>
+              <input id="edit-avatar-input" type="url" class="modal__input modal__input_type_avatar-url" name="avatar" required />
+              <span id="edit-avatar-input-error" class="modal__error modal__error_type_avatar-url"></span>
+            </label>
+            <button type="submit" class="modal__submit-btn modal__submit-btn_type_edit-avatar">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal -->
+<!-- Delete Confirmation Modal -->
+<div class="modal modal_type_delete" id="delete-modal">
+  <div class="modal__container modal__container_type_delete">
+    <div class="modal__header modal__header_type_delete">
+      <h2 class="modal__title modal__title_type_delete">
+        Are you sure you want to delete this image?
+      </h2>
+      <button
+        type="button"
+        class="modal__close-btn modal__close-btn_type_delete"
+        aria-label="Close modal">
+      </button>
+    </div>
+    <form class="modal__form modal__form_type_delete" novalidate>
+      <div class="modal__button-group modal__button-group_type_delete">
+        <button
+          type="submit"
+          class="modal__submit-btn modal__submit-btn_type_delete">
+          Delete
+        </button>
+        <button
+          type="button"
+          class="modal__submit-btn modal__submit-btn_type_cancel-delete"
+          id="cancel-delete-btn">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+      <!-- Delete Confirmation Modal -->
+    <!-- Delete Confirmation Modal -->
+<!--<div class="modal modal_type_delete" id="delete-modal">
+  <div class="modal__container">
+    <div class="modal__container-delete-title">
+      <h2 class="modal__title">
+        Are you sure you want to delete this image?
+      </h2>
+      <button type="button" class="modal__close-btn modal__close-btn_type_delete" aria-label="Close modal">&times;</button>
+
+    </div>
+    <form class="modal_delete__form" novalidate>
+      <div class="modal__button-group">
+        <button type="submit" class="modal__submit-btn modal__submit-btn_delete">Delete</button>
+        <button type="button" class="modal__submit-btn modal__submit-btn_cancel" id="cancel-delete-btn">Cancel</button>
+      </div>
+      </button>
+    </form>
+  </div>
+</div>-->
+
+      <!-- Preview Modal -->
+
+      <div class="modal" id="preview-modal">
+        <div class="modal__content modal__content_type_preview">
+          <div class="modal__img-wrapper">
+            <button
+              type="button"
+              class="modal__close-preview"
+              aria-label="Close preview"
+            ></button>
+            <img class="modal__img" src="" alt="Preview image" />
+          </div>
+          <p class="modal__caption"></p>
+        </div>
+      </div>
+    <!--
+      <div class="modal" id="preview-modal">
+        <div class="modal__container modal__container_preview">
+          <img src="" alt="" class="modal__img" />
+          <p class="modal__caption"></p>
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="Close modal"
+          ></button>
+        </div>!-->
+      </div>
+    </div>
+    <!--<script type="module" src="./pages/index.js"></script>-->
+  </body>
+</html>
